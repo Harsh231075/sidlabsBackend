@@ -1,0 +1,113 @@
+[
+  {
+    "id": "evt-1",
+    "title": "Monthly Wellness AMA",
+    "description": "Join our expert panel for a monthly Ask Me Anything session focused on wellness strategies for rare disease patients. Our healthcare professionals will answer your questions live.",
+    "eventDate": "2025-01-25",
+    "eventTime": "5:00 PM EST",
+    "location": "Zoom Webinar",
+    "eventType": "virtual",
+    "registrationUrl": "https://zoom.us/webinar/register/wellness-ama",
+    "diseasePageSlug": null,
+    "maxAttendees": 100,
+    "attendees": [
+      "u-patient-1",
+      "u-caregiver-1"
+    ],
+    "createdBy": "u-admin",
+    "createdAt": "2025-01-01T10:00:00.000Z",
+    "updatedAt": "2025-01-01T10:00:00.000Z"
+  },
+  {
+    "id": "evt-2",
+    "title": "Caregiver Circle Support Group",
+    "description": "A safe space for caregivers to share experiences, seek advice, and find support from others who understand the journey. Both in-person and virtual attendance options available.",
+    "eventDate": "2025-01-28",
+    "eventTime": "6:30 PM EST",
+    "location": "Community Center & Online",
+    "eventType": "hybrid",
+    "registrationUrl": "https://winsights.life/events/caregiver-circle",
+    "diseasePageSlug": null,
+    "maxAttendees": 50,
+    "attendees": [
+      "u-caregiver-1"
+    ],
+    "createdBy": "u-mod",
+    "createdAt": "2025-01-02T14:00:00.000Z",
+    "updatedAt": "2025-01-02T14:00:00.000Z"
+  },
+  {
+    "id": "evt-3",
+    "title": "Rare Disease Awareness Walk 2025",
+    "description": "Join us for our annual awareness walk to support rare disease research and community building. Family-friendly event with activities, food vendors, and educational booths.",
+    "eventDate": "2025-02-28",
+    "eventTime": "10:00 AM",
+    "location": "Golden Gate Park, San Francisco",
+    "eventType": "in-person",
+    "registrationUrl": "https://winsights.life/events/awareness-walk-2025",
+    "diseasePageSlug": null,
+    "maxAttendees": 500,
+    "attendees": [
+      "u-patient-1",
+      "u-patient-2",
+      "u-caregiver-1",
+      "u-caregiver-2"
+    ],
+    "createdBy": "u-admin",
+    "createdAt": "2025-01-05T09:00:00.000Z",
+    "updatedAt": "2025-01-05T09:00:00.000Z"
+  },
+  {
+    "id": "evt-4",
+    "title": "Understanding Sjögren's Disease Webinar",
+    "description": "An educational webinar covering the latest research, treatment options, and management strategies for Sjögren's Disease. Featuring Dr. Emily Chen, rheumatologist.",
+    "eventDate": "2025-02-10",
+    "eventTime": "2:00 PM EST",
+    "location": "Microsoft Teams",
+    "eventType": "virtual",
+    "registrationUrl": "https://teams.microsoft.com/webinar/sjogrens",
+    "diseasePageSlug": "sjogrens-disease",
+    "maxAttendees": 200,
+    "attendees": [
+      "u-patient-1"
+    ],
+    "createdBy": "u-admin",
+    "createdAt": "2025-01-08T11:00:00.000Z",
+    "updatedAt": "2025-01-08T11:00:00.000Z"
+  },
+  {
+    "id": "evt-5",
+    "title": "New Member Orientation",
+    "description": "Welcome session for new members of the Winsights Life community. Learn about platform features, support resources, and how to connect with others on similar journeys.",
+    "eventDate": "2025-01-20",
+    "eventTime": "12:00 PM EST",
+    "location": "Google Meet",
+    "eventType": "virtual",
+    "registrationUrl": "https://meet.google.com/winsights-orientation",
+    "diseasePageSlug": null,
+    "maxAttendees": 30,
+    "attendees": [],
+    "createdBy": "u-mod",
+    "createdAt": "2025-01-10T08:00:00.000Z",
+    "updatedAt": "2025-01-10T08:00:00.000Z"
+  },
+  {
+    "id": "evt-6",
+    "title": "Mental Health & Chronic Illness Workshop",
+    "description": "Interactive workshop addressing the mental health challenges faced by patients and caregivers. Includes coping strategies, mindfulness exercises, and Q&A with a licensed therapist.",
+    "eventDate": "2025-03-15",
+    "eventTime": "3:00 PM EST",
+    "location": "Hybrid - NYC Community Center & Zoom",
+    "eventType": "hybrid",
+    "registrationUrl": "https://winsights.life/events/mental-health-workshop",
+    "diseasePageSlug": null,
+    "maxAttendees": 75,
+    "attendees": [
+      "u-patient-2",
+      "u-caregiver-2"
+    ],
+    "createdBy": "u-admin",
+    "createdAt": "2025-01-12T16:00:00.000Z",
+    "updatedAt": "2025-01-12T16:00:00.000Z"
+  }
+]
