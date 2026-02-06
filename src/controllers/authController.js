@@ -144,35 +144,35 @@ function setAuthCookies(res, auth) {
   //     maxAge: auth.ExpiresIn * 1000,
   //   });
 
-  // res.cookie("winsights_auth", auth.IdToken, {
-  //   domain: ".sidlabs.net",
-  //   httpOnly: true,
-  //   secure: true,
-  //   sameSite: "none",
-  //   maxAge: 60 * 60 * 1000,
-  // });
-
-  // res.cookie("winsights_access", auth.AccessToken, {
-  //   domain: ".sidlabs.net",
-  //   httpOnly: true,
-  //   secure: true,
-  //   sameSite: "none",
-  //   maxAge: 15 * 60 * 1000, // access token = short lived
-  // });
+  res.cookie("winsights_auth", auth.IdToken, {
+    domain: ".sidlabs.net",
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 60 * 60 * 1000,
+  });
 
   res.cookie("winsights_access", auth.AccessToken, {
-    domain: "localhost",
-    secure: false,
-    sameSite: "lax",
-    maxAge: auth.ExpiresIn * 1000,
+    domain: ".sidlabs.net",
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 15 * 60 * 1000, // access token = short lived
   });
 
-  res.cookie("winsights_auth", auth.IdToken, {
-    domain: "localhost",
-    secure: false,
-    sameSite: "lax",
-    maxAge: auth.ExpiresIn * 1000,
-  });
+  // res.cookie("winsights_access", auth.AccessToken, {
+  //   domain: "localhost",
+  //   secure: false,
+  //   sameSite: "lax",
+  //   maxAge: auth.ExpiresIn * 1000,
+  // });
+
+  // res.cookie("winsights_auth", auth.IdToken, {
+  //   domain: "localhost",
+  //   secure: false,
+  //   sameSite: "lax",
+  //   maxAge: auth.ExpiresIn * 1000,
+  // });
 }
 
 function buildTokenPayload(auth) {
@@ -549,31 +549,31 @@ async function respondToAuthChallenge(req, res) {
 
 
 function logout(req, res) {
-  res.clearCookie("winsights_auth", {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: false,
-  });
-
-  res.clearCookie("winsights_access", {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: false,
-  });
-
   // res.clearCookie("winsights_auth", {
   //   httpOnly: true,
-  //   sameSite: "none",
-  //   secure: true,
-  //   domain: ".sidlabs.net",
+  //   sameSite: "lax",
+  //   secure: false,
   // });
 
   // res.clearCookie("winsights_access", {
   //   httpOnly: true,
-  //   sameSite: "none",
-  //   secure: true,
-  //   domain: ".sidlabs.net",
+  //   sameSite: "lax",
+  //   secure: false,
   // });
+
+  res.clearCookie("winsights_auth", {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+    domain: ".sidlabs.net",
+  });
+
+  res.clearCookie("winsights_access", {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+    domain: ".sidlabs.net",
+  });
 
   return res.json({ success: true });
 }
