@@ -1,0 +1,58 @@
+[
+  {
+    "id": "8549ca5c-b6d2-4cc6-8a61-fdedd508fafd",
+    "userId": "user-1",
+    "type": "first-post",
+    "name": "First Post",
+    "awardedAt": "2026-01-09T11:52:45.641Z"
+  },
+  {
+    "id": "dbdee40a-5b0b-4676-b313-8bf948867b90",
+    "userId": "u-patient-1",
+    "type": "first-post",
+    "name": "First Post",
+    "awardedAt": "2026-01-09T11:59:03.147Z"
+  },
+  {
+    "id": "fd2f3c6a-60c6-47f7-908b-44c14fb93d7f",
+    "userId": "u-patient-1",
+    "type": "community-contributor",
+    "name": "Community Contributor",
+    "awardedAt": "2026-01-09T11:59:03.148Z"
+  },
+  {
+    "id": "50d6d6ff-baa5-4a25-9c43-cb456d935d06",
+    "userId": "u-patient-1",
+    "type": "first-comment",
+    "name": "First Comment",
+    "awardedAt": "2026-01-09T11:59:03.149Z"
+  },
+  {
+    "id": "83bbad1b-159d-4944-9792-7b538371be88",
+    "userId": "u-mod",
+    "type": "first-post",
+    "name": "First Post",
+    "awardedAt": "2026-01-09T12:06:12.540Z"
+  },
+  {
+    "id": "4ee788f8-9262-47e1-b696-5b85e5edcd11",
+    "userId": "u-mod",
+    "type": "community-contributor",
+    "name": "Community Contributor",
+    "awardedAt": "2026-01-09T12:06:12.541Z"
+  },
+  {
+    "id": "95267eaa-7ad9-4fd9-9660-5a4aba7b9978",
+    "userId": "u-mod",
+    "type": "first-comment",
+    "name": "First Comment",
+    "awardedAt": "2026-01-09T12:06:12.541Z"
+  },
+  {
+    "id": "36940b69-ea49-466b-893f-f3ef01dd7595",
+    "userId": "u-mod",
+    "type": "moderator",
+    "name": "Moderator",
+    "awardedAt": "2026-01-09T12:06:12.541Z"
+  }
+]

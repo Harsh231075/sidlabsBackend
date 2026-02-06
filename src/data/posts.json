@@ -1,0 +1,865 @@
+[
+  {
+    "id": "p1",
+    "authorId": "u-patient-1",
+    "content": "Feeling good today after my latest treatment. Stay positive, everyone!",
+    "mediaUrl": "",
+    "createdAt": "2024-01-05T10:00:00.000Z",
+    "updatedAt": "2024-01-05T10:00:00.000Z",
+    "likes": [
+      "u-patient-2"
+    ],
+    "reported": false,
+    "reports": [],
+    "removed": false,
+    "moderation": {
+      "status": "ALLOW",
+      "reviewedBy": "u-admin",
+      "reviewedAt": "2025-12-27T18:18:12.938Z",
+      "action": "approved"
+    },
+    "visible": true
+  },
+  {
+    "id": "p2",
+    "authorId": "u-patient-2",
+    "content": "Has anyone else experienced a rash like this? Worried it might be related to the medication.",
+    "mediaUrl": "",
+    "createdAt": "2024-01-06T15:30:00.000Z",
+    "updatedAt": "2024-01-06T15:30:00.000Z",
+    "likes": [
+      "u-patient-1"
+    ],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "REJECT",
+      "reviewedBy": "u-admin",
+      "reviewedAt": "2025-12-27T18:17:55.432Z",
+      "action": "rejected"
+    }
+  },
+  {
+    "id": "14dcf0c4-51ff-4c32-a349-3f094c1c3ba7",
+    "authorId": "u-patient-1",
+    "content": "io",
+    "mediaUrl": "",
+    "createdAt": "2025-12-24T10:30:08.285Z",
+    "updatedAt": "2025-12-24T10:30:08.285Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "removedBy": "u-admin",
+    "removedAt": "2025-12-24T10:51:57.301Z"
+  },
+  {
+    "id": "158dc03c-51ab-4e85-b19c-fec43bb78bf2",
+    "authorId": "u-patient-1",
+    "content": "Anand bahut bekaar ladka hai!!",
+    "mediaUrl": "",
+    "createdAt": "2025-12-24T10:36:02.966Z",
+    "updatedAt": "2025-12-24T10:36:02.966Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "removedBy": "u-admin",
+    "removedAt": "2026-01-09T13:00:33.065Z"
+  },
+  {
+    "id": "9fd956e3-1a60-4379-bbe2-3d26dfba6a0b",
+    "authorId": "u-patient-1",
+    "content": "Use code HEALTH20 to get discount:\nhttps://cheap-meds-example.com",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-27T17:43:33.282Z",
+    "updatedAt": "2025-12-27T17:43:33.282Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "SOFT_BLOCK",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0.5,
+        "sales_pitch_score": 0.4,
+        "toxicity_score": 0,
+        "link_risk_score": 0.4,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-27T17:43:33.282Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-27T17:56:46.544Z"
+  },
+  {
+    "id": "d231a3aa-bc81-428e-90c3-c19e9fdef60c",
+    "authorId": "u-patient-1",
+    "content": "Call me at 555-123-4567",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-27T17:47:25.308Z",
+    "updatedAt": "2025-12-27T17:47:25.308Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "QUARANTINE",
+      "scores": {
+        "phi_score": 1,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [
+        "phi_detected"
+      ],
+      "detectedSpans": [
+        {
+          "text": "555-123-4567",
+          "type": "phi",
+          "subtype": "phone",
+          "start": 11,
+          "end": 23
+        },
+        {
+          "text": "555-123-4567",
+          "type": "phi",
+          "subtype": "validated_phone",
+          "start": 11,
+          "end": 23
+        }
+      ],
+      "scannedAt": "2025-12-27T17:47:25.307Z"
+    },
+    "visible": false,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-27T17:56:34.288Z"
+  },
+  {
+    "id": "4b3f2ce0-e0fb-406a-bb76-ca063e78357a",
+    "authorId": "u-patient-1",
+    "content": "FREE PRIZE CLICK HERE",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-27T17:47:48.519Z",
+    "updatedAt": "2025-12-27T17:47:48.519Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "QUARANTINE",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0.8,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [
+        "spam_detected"
+      ],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-27T17:47:48.519Z"
+    },
+    "visible": false,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-27T17:56:30.540Z"
+  },
+  {
+    "id": "d9f63623-97af-429e-8e49-4506139ea75c",
+    "authorId": "u-patient-1",
+    "content": "Stop spreading nonsense, you people are idiots.",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-27T18:07:36.096Z",
+    "updatedAt": "2025-12-27T18:07:36.096Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0.6,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [
+        "toxicity"
+      ],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-27T18:07:36.095Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:09:53.541Z"
+  },
+  {
+    "id": "4f2dd1d6-a712-4937-8692-c9d684934ffb",
+    "authorId": "u-patient-1",
+    "content": "You can call me directly at 9876543210 if anyone wants help.",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-27T18:07:58.429Z",
+    "updatedAt": "2025-12-27T18:07:58.429Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "REJECT",
+      "scores": {
+        "phi_score": 1,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [
+        "phi_detected"
+      ],
+      "detectedSpans": [
+        {
+          "text": "9876543210",
+          "type": "phi",
+          "subtype": "phone",
+          "start": 28,
+          "end": 38
+        },
+        {
+          "text": "9876543210",
+          "type": "phi",
+          "subtype": "validated_phone",
+          "start": 28,
+          "end": 38
+        }
+      ],
+      "scannedAt": "2025-12-27T18:07:58.428Z",
+      "reviewedBy": "u-admin",
+      "reviewedAt": "2025-12-27T18:08:51.629Z"
+    },
+    "visible": false
+  },
+  {
+    "id": "021e43d8-65c4-43be-ae54-fdc363ae0033",
+    "authorId": "u-patient-1",
+    "content": "your are motherfucker",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-27T18:15:44.410Z",
+    "updatedAt": "2025-12-27T18:15:44.410Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-27T18:15:44.409Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-27T18:18:44.286Z"
+  },
+  {
+    "id": "ea3e67c9-3a1c-4e59-8039-d1708d8e3a45",
+    "authorId": "u-mod",
+    "content": "kjhgf",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-27T18:18:49.388Z",
+    "updatedAt": "2025-12-27T18:18:49.388Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-27T18:18:49.380Z"
+    },
+    "visible": true,
+    "removedBy": "u-admin",
+    "removedAt": "2025-12-29T10:42:54.660Z"
+  },
+  {
+    "id": "0fbe6af9-0c2c-405c-965a-63f35378e7e2",
+    "authorId": "u-patient-1",
+    "content": "fuck you",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:06:50.811Z",
+    "updatedAt": "2025-12-29T06:06:50.811Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:06:50.810Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:09:49.340Z"
+  },
+  {
+    "id": "dab1a026-c55f-42bd-a853-e51f61b0f81b",
+    "authorId": "u-patient-1",
+    "content": "use  this  number 900000139012 get my update",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:07:47.710Z",
+    "updatedAt": "2025-12-29T06:07:47.710Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0.3,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:07:47.710Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:09:44.624Z"
+  },
+  {
+    "id": "ad95aefa-caeb-49da-96f2-ad04e424e521",
+    "authorId": "u-mod",
+    "content": "tu chutiya h kiya re mere bhai",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:12:05.803Z",
+    "updatedAt": "2025-12-29T06:12:05.803Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:12:05.801Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:12:08.966Z"
+  },
+  {
+    "id": "337fc4aa-9bf5-4822-9bd9-820a00aeec1d",
+    "authorId": "u-mod",
+    "content": "nonness",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:12:23.591Z",
+    "updatedAt": "2025-12-29T06:12:23.591Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:12:23.591Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:12:26.944Z"
+  },
+  {
+    "id": "345d0856-21ce-4e04-bd7f-5010c8b9ec46",
+    "authorId": "u-mod",
+    "content": "motherfuck",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:12:37.714Z",
+    "updatedAt": "2025-12-29T06:12:37.714Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:12:37.712Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:12:41.645Z"
+  },
+  {
+    "id": "300b8d65-8702-45ff-bcd7-ecad22d35e76",
+    "authorId": "u-mod",
+    "content": "mother fucker",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:12:47.695Z",
+    "updatedAt": "2025-12-29T06:12:47.695Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:12:47.694Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:12:53.606Z"
+  },
+  {
+    "id": "e3c61194-0e6f-4168-b9ae-9e8c85ad8c19",
+    "authorId": "u-mod",
+    "content": "idoits",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:13:24.525Z",
+    "updatedAt": "2025-12-29T06:13:24.525Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:13:24.525Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:13:27.381Z"
+  },
+  {
+    "id": "ec1135ce-2f9c-4c66-b4f0-c39b591b61c3",
+    "authorId": "u-mod",
+    "content": "idiots",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:14:14.328Z",
+    "updatedAt": "2025-12-29T06:14:14.328Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:14:14.328Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:14:16.992Z"
+  },
+  {
+    "id": "f2515889-de25-4878-83c8-b55abff08a57",
+    "authorId": "u-mod",
+    "content": "stop spreading nonsense.you people are idiots",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:14:55.516Z",
+    "updatedAt": "2025-12-29T06:14:55.516Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0.1,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:14:55.516Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:14:58.910Z"
+  },
+  {
+    "id": "b6b05c81-5211-4dfd-b16e-18095235c39d",
+    "authorId": "u-mod",
+    "content": "you are nonese",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:19:05.527Z",
+    "updatedAt": "2025-12-29T06:19:05.527Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:19:05.526Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:19:08.248Z"
+  },
+  {
+    "id": "14412fff-5db8-4a30-bd05-3f05530258d6",
+    "authorId": "u-mod",
+    "content": "chutiya",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:19:23.867Z",
+    "updatedAt": "2025-12-29T06:19:23.867Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:19:23.866Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:19:26.478Z"
+  },
+  {
+    "id": "fc02f0cd-0501-4a0b-8dba-fdc55905649b",
+    "authorId": "u-mod",
+    "content": "you are dog",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2025-12-29T06:19:34.661Z",
+    "updatedAt": "2025-12-29T06:19:34.661Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-29T06:19:34.660Z"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2025-12-29T06:19:37.334Z"
+  },
+  {
+    "id": "b1d589b2-e259-4c74-9f25-448c61c23fb3",
+    "authorId": "u-patient-1",
+    "content": "stupid",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2026-01-09T11:48:57.686Z",
+    "updatedAt": "2026-01-09T11:48:57.686Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "analysis": {
+        "badWordHits": [],
+        "promoHits": [],
+        "spamHits": [],
+        "phiDetections": [],
+        "categories": [],
+        "alertRequired": false
+      },
+      "flaggedAt": null,
+      "flaggedBy": null
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2026-01-09T11:59:37.849Z"
+  },
+  {
+    "id": "c104dcdc-c9a3-40aa-a482-6d49c2594b5f",
+    "authorId": "u-patient-1",
+    "content": "fuck",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2026-01-09T11:59:03.145Z",
+    "updatedAt": "2026-01-09T11:59:03.145Z",
+    "likes": [],
+    "reported": true,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "PENDING_REVIEW",
+      "analysis": {
+        "badWordHits": [
+          "profane"
+        ],
+        "promoHits": [],
+        "spamHits": [],
+        "phiDetections": [],
+        "categories": [
+          "bad_words"
+        ],
+        "alertRequired": true
+      },
+      "flaggedAt": "2026-01-09T11:59:03.145Z",
+      "flaggedBy": "u-patient-1"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2026-01-09T11:59:34.774Z"
+  },
+  {
+    "id": "706f62b6-de4e-4dfb-9257-39a9db02a05b",
+    "authorId": "u-mod",
+    "content": "sex",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2026-01-09T12:06:12.535Z",
+    "updatedAt": "2026-01-09T12:06:12.535Z",
+    "likes": [],
+    "reported": true,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "PENDING_REVIEW",
+      "analysis": {
+        "badWordHits": [
+          "profane"
+        ],
+        "promoHits": [],
+        "spamHits": [],
+        "phiDetections": [],
+        "categories": [
+          "bad_words"
+        ],
+        "alertRequired": true
+      },
+      "flaggedAt": "2026-01-09T12:06:12.536Z",
+      "flaggedBy": "u-mod"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2026-01-09T12:06:22.999Z"
+  },
+  {
+    "id": "002fdaf4-39a7-4d81-b61b-95ad90ad3f5c",
+    "authorId": "u-patient-1",
+    "content": "idiots",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2026-01-09T13:01:39.695Z",
+    "updatedAt": "2026-01-09T13:01:39.695Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "analysis": {
+        "badWordHits": [],
+        "promoHits": [],
+        "spamHits": [],
+        "phiDetections": [],
+        "categories": [],
+        "alertRequired": false
+      },
+      "flaggedAt": null,
+      "flaggedBy": null
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2026-01-09T13:02:27.378Z"
+  },
+  {
+    "id": "0f356daf-95a3-4405-b8b9-574452d900ca",
+    "authorId": "u-patient-1",
+    "content": "stupid",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2026-01-09T13:01:55.536Z",
+    "updatedAt": "2026-01-09T13:01:55.536Z",
+    "likes": [],
+    "reported": false,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "ALLOW",
+      "analysis": {
+        "badWordHits": [],
+        "promoHits": [],
+        "spamHits": [],
+        "phiDetections": [],
+        "categories": [],
+        "alertRequired": false
+      },
+      "flaggedAt": null,
+      "flaggedBy": null
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2026-01-09T13:02:25.054Z"
+  },
+  {
+    "id": "ec28233e-5938-4292-808b-68733cc4ea29",
+    "authorId": "u-patient-1",
+    "content": "fuck",
+    "mediaUrl": "",
+    "groupId": null,
+    "createdAt": "2026-01-09T13:05:11.004Z",
+    "updatedAt": "2026-01-09T13:05:11.004Z",
+    "likes": [],
+    "reported": true,
+    "reports": [],
+    "removed": true,
+    "moderation": {
+      "status": "PENDING_REVIEW",
+      "analysis": {
+        "badWordHits": [
+          "profane"
+        ],
+        "promoHits": [],
+        "spamHits": [],
+        "phiDetections": [],
+        "categories": [
+          "bad_words"
+        ],
+        "alertRequired": true
+      },
+      "flaggedAt": "2026-01-09T13:05:11.005Z",
+      "flaggedBy": "u-patient-1"
+    },
+    "visible": true,
+    "removedBy": "u-mod",
+    "removedAt": "2026-01-09T13:06:36.632Z"
+  }
+]

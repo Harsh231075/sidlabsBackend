@@ -1,0 +1,13 @@
+[
+  {
+    "id": "7aa88e39-c7f9-4703-9895-a3650431870a",
+    "userId": "u-patient-2",
+    "type": "like",
+    "message": "Someone liked your post",
+    "entityId": "p2",
+    "entityType": "post",
+    "read": true,
+    "createdAt": "2025-12-25T10:51:44.839Z",
+    "metadata": {}
+  }
+]
