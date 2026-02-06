@@ -47,7 +47,7 @@ function normalizeEmail(email) {
 
 function isRoleAllowedForSocial(role) {
   // Only these roles can access Winsights Social.
-  return role === "patient" || role === "moderator" || role === "admin";
+  return role === "patient" || role === "moderator" || role === "admin" || role === 'caregiver';;
 }
 
 function extractRoleFromDecodedIdToken(decoded) {
