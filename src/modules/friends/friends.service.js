@@ -171,12 +171,30 @@ async function listAcceptedFriends(userId) {
     .populate('to', 'name username avatarUrl role');
 
   const friends = requests.map(r => {
-    const isFromMe = String(r.from._id) === String(userId);
-    const friend = isFromMe ? r.to : r.from;
+    // Defensive: population may be null if a user was deleted or population failed under load.
+    const from = r.from || null;
+    const to = r.to || null;
+
+    // If both sides missing, skip this record
+    if (!from && !to) {
+      console.warn('[friends] Skipping friend request with missing participants', { requestId: r._id });
+      return null;
+    }
+
+    const isFromMe = from ? String(from._id) === String(userId) : false;
+    const friend = isFromMe ? to : from;
+
+    if (!friend) {
+      // If friend side is missing, skip rather than throw
+      console.warn('[friends] Skipping friend entry due to missing friend side', { requestId: r._id, userId });
+      return null;
+    }
+
     return { id: friend._id, name: friend.name, username: friend.username, avatarUrl: toPublicUrl(friend.avatarUrl), role: friend.role };
   });
 
-  return { friends };
+  // Filter out any nulls introduced by defensive skipping
+  return { friends: friends.filter(Boolean) };
 }
 
 module.exports = { sendFriendRequest, sendFriendRequestById, acceptFriendRequest, rejectFriendRequest, cancelFriendRequest, listFriendRequests, listAcceptedFriends };
