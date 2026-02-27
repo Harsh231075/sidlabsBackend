@@ -5,6 +5,7 @@ const Group = require('../models/Group');
 const Post = require('../models/Post');
 const User = require('../models/User');
 const { SimpleTtlCache } = require('../utils/simpleTtlCache');
+const { safeGet, safeSet } = require('./redisClient');
 
 // Best-effort per-process caches to reduce repeated DB work under load.
 const connectionsCache = new SimpleTtlCache({ defaultTtlMs: 30000, maxEntries: 5000 });
@@ -92,91 +93,70 @@ async function getUserConnections(userId) {
 async function getSmartFeedWithConnections(userId, connections, options = {}) {
     const { limit = 20, cursor = null, blockedUserIds = [] } = options;
 
-    // Combine all connected user IDs with weights
+    // Combine all connected user IDs
     const connectedUserIds = new Set();
-
-    // Add friends (highest priority)
     connections.friendIds.forEach(id => connectedUserIds.add(id));
-
-    // Add following
     connections.followingIds.forEach(id => connectedUserIds.add(id));
-
-    // Add group members
     connections.groupMemberIds.forEach(id => connectedUserIds.add(id));
-
-    // Remove any blocked users from connected set
     blockedUserIds.forEach(id => connectedUserIds.delete(id));
+    connectedUserIds.add(userId); // Include own posts
 
     const limitPlusOne = limit + 1;
-    const baseQuery = { removed: false, visible: true };
 
-    // Exclude blocked users from all queries
-    if (blockedUserIds.length > 0) {
-        baseQuery.authorId = { $nin: blockedUserIds };
+    // Build a SINGLE $or query instead of 3 parallel queries (reduces DB round-trips)
+    const feedOrConditions = [];
+
+    if (connectedUserIds.size > 0) {
+        const authorCond = { authorId: { $in: Array.from(connectedUserIds) }, groupId: null, diseasePageSlug: null };
+        if (blockedUserIds.length > 0) {
+            authorCond.authorId = { $in: Array.from(connectedUserIds), $nin: blockedUserIds };
+        }
+        feedOrConditions.push(authorCond);
     }
-    const cursorFilter = cursor ? {
-        $or: [
+
+    if (connections.groupIds.length > 0) {
+        feedOrConditions.push({ groupId: { $in: connections.groupIds } });
+    }
+
+    if (connections.followedDiseaseSlugs.length > 0) {
+        feedOrConditions.push({ diseasePageSlug: { $in: connections.followedDiseaseSlugs } });
+    }
+
+    if (feedOrConditions.length === 0) {
+        return { posts: [], hasMore: false, nextCursor: null };
+    }
+
+    // Assemble final query
+    const finalQuery = { removed: false, visible: true };
+    if (blockedUserIds.length > 0) {
+        finalQuery.authorId = { $nin: blockedUserIds };
+    }
+
+    if (feedOrConditions.length === 1) {
+        Object.assign(finalQuery, feedOrConditions[0]);
+    } else {
+        finalQuery.$or = feedOrConditions;
+    }
+
+    // Add cursor pagination
+    if (cursor) {
+        const cursorCond = [
             { createdAt: { $lt: cursor.createdAt } },
             { createdAt: cursor.createdAt, _id: { $lt: cursor.id } }
-        ]
-    } : null;
-
-    // Prepare promises for parallel execution
-    const queries = [];
-
-    // 1. Posts from connected users (no group/disease page) + Self
-    // connectedUserIds includes friends, following, group members
-    connectedUserIds.add(userId); // Add self
-    if (connectedUserIds.size > 0) {
-        const authorQuery = {
-            ...baseQuery,
-            authorId: { ...(baseQuery.authorId || {}), $in: Array.from(connectedUserIds) },
-            groupId: null,
-            diseasePageSlug: null
-        };
-        // If blockedUserIds, use $and to combine $in and $nin
-        if (blockedUserIds.length > 0) {
-            authorQuery.authorId = { $in: Array.from(connectedUserIds), $nin: blockedUserIds };
+        ];
+        if (finalQuery.$or) {
+            finalQuery.$and = [{ $or: finalQuery.$or }, { $or: cursorCond }];
+            delete finalQuery.$or;
         } else {
-            authorQuery.authorId = { $in: Array.from(connectedUserIds) };
+            finalQuery.$or = cursorCond;
         }
-        if (cursorFilter) authorQuery.$or = cursorFilter.$or;
-        queries.push(Post.find(authorQuery).sort({ createdAt: -1, _id: -1 }).limit(limitPlusOne).lean());
     }
 
-    // 2. Posts from groups I'm in
-    if (connections.groupIds.length > 0) {
-        const groupQuery = {
-            ...baseQuery,
-            groupId: { $in: connections.groupIds }
-        };
-        if (cursorFilter) groupQuery.$or = cursorFilter.$or;
-        queries.push(Post.find(groupQuery).sort({ createdAt: -1, _id: -1 }).limit(limitPlusOne).lean());
-    }
-
-    // 3. Posts from disease pages I follow
-    if (connections.followedDiseaseSlugs.length > 0) {
-        const diseaseQuery = {
-            ...baseQuery,
-            diseasePageSlug: { $in: connections.followedDiseaseSlugs }
-        };
-        if (cursorFilter) diseaseQuery.$or = cursorFilter.$or;
-        queries.push(Post.find(diseaseQuery).sort({ createdAt: -1, _id: -1 }).limit(limitPlusOne).lean());
-    }
-
-    // Execute all queries in parallel
-    const results = await Promise.all(queries);
-
-    // Merge, Deduplicate, and Sort
-    const allPostsMap = new Map();
-    results.flat().forEach(p => allPostsMap.set(String(p._id), p));
-
-    const posts = Array.from(allPostsMap.values());
-    posts.sort((a, b) => {
-        const timeDiff = new Date(b.createdAt) - new Date(a.createdAt);
-        if (timeDiff !== 0) return timeDiff;
-        return String(b._id).localeCompare(String(a._id));
-    });
+    const posts = await Post.find(finalQuery)
+        .sort({ createdAt: -1, _id: -1 })
+        .limit(limitPlusOne)
+        .select('-reports -moderation')
+        .lean();
 
     const hasMore = posts.length > limit;
     const trimmedPosts = hasMore ? posts.slice(0, limit) : posts;
@@ -329,22 +309,32 @@ async function getColdStartFeed(userId, userProfile, options = {}) {
  */
 async function getSmartFeed(userId, options = {}) {
     try {
+        // Short-lived Redis cache to avoid re-querying the same feed under concurrent load
+        const cursorKey = options.cursor ? `${options.cursor.createdAt}:${options.cursor.id}` : 'first';
+        const cacheKey = `feed:smart:${userId}:${cursorKey}`;
+        const cached = await safeGet(cacheKey);
+        if (cached) {
+            try { return JSON.parse(cached); } catch {}
+        }
+
         const connections = await getUserConnections(userId);
 
-        // Check if user has any connections
         const hasConnections =
             connections.followingIds.length > 0 ||
             connections.friendIds.length > 0 ||
             connections.groupIds.length > 0 ||
             connections.followedDiseaseSlugs.length > 0;
 
+        let result;
         if (hasConnections) {
-            // User has connections - show personalized feed
-            return await getSmartFeedWithConnections(userId, connections, options);
+            result = await getSmartFeedWithConnections(userId, connections, options);
         } else {
-            // New user without connections - use cold start strategy
-            return await getColdStartFeed(userId, connections.userProfile, options);
+            result = await getColdStartFeed(userId, connections.userProfile, options);
         }
+
+        // Cache for 15 seconds — absorbs hundreds of concurrent requests for same user
+        await safeSet(cacheKey, JSON.stringify(result), 15);
+        return result;
     } catch (error) {
         console.error('Error getting smart feed:', error);
         throw error;
