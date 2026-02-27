@@ -38,26 +38,29 @@ const TOKEN_REWARDS = {
  * Get or initialize gamification data for a user
  */
 async function getUserGamification(userId) {
-  let gamification = await Gamification.findOne({ userId });
-
-  if (!gamification) {
-    const now = new Date();
-    gamification = await Gamification.create({
-      userId,
-      totalTokens: 0,
-      tokenHistory: [],
-      badges: [],
-      actionCounts: {
-        create_post: 0,
-        create_comment: 0,
-        forum_reply: 0,
-        survey_completion: 0,
-        helpful_content: 0,
+  const now = new Date();
+  // Use findOneAndUpdate + upsert to avoid E11000 duplicate key under concurrent load
+  const gamification = await Gamification.findOneAndUpdate(
+    { userId },
+    {
+      $setOnInsert: {
+        userId,
+        totalTokens: 0,
+        tokenHistory: [],
+        badges: [],
+        actionCounts: {
+          create_post: 0,
+          create_comment: 0,
+          forum_reply: 0,
+          survey_completion: 0,
+          helpful_content: 0,
+        },
+        createdAt: now,
+        updatedAt: now,
       },
-      createdAt: now,
-      updatedAt: now,
-    });
-  }
+    },
+    { upsert: true, new: true }
+  );
 
   return gamification;
 }
