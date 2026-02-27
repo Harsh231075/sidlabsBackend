@@ -151,6 +151,7 @@ if (String(__ENV.K6_DEBUG || '0') === '1') {
 export const server_error_rate = new Rate('server_error_rate');
 export const client_error_rate = new Rate('client_error_rate');
 export const ok_rate = new Rate('ok_rate');
+export const cache_hit_rate = new Rate('cache_hit_rate');
 export const skipped_missing_data = new Counter('skipped_missing_data');
 export const skipped_no_token = new Counter('skipped_no_token');
 export const skipped_writes_disabled = new Counter('skipped_writes_disabled');
@@ -502,6 +503,13 @@ function request(method, path, { headers = {}, tags = {}, body = null, timeout =
 
   recordRates(res);
   recordEndpointMetrics(res, tags);
+
+  // Track cache effectiveness if server includes X-Cache header.
+  // (Only meaningful once responseCache middleware is enabled.)
+  const xCache = res?.headers?.['X-Cache'] || res?.headers?.['x-cache'] || '';
+  if (xCache) {
+    cache_hit_rate.add(String(xCache).toUpperCase() === 'HIT', tags);
+  }
   return res;
 }
 
