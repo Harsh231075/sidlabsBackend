@@ -12,7 +12,7 @@ const routes = require('./routes');
 const { initializeSocket, setIoInstance } = require('./socket');
 const connectDB = require('./db');
 const auditLogger = require('./middleware/auditLogger');
-const responseCache = require('./middleware/response/responseCache');
+const responseCache = require('./middleware/responseCache');
 const cookieParser = require('cookie-parser');
 const redis = require('./services/redisClient');
 
