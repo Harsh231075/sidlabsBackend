@@ -1416,11 +1416,20 @@ export function handleSummary(data) {
   const customServer = pickMetric(data, 'server_error_rate');
   const customClient = pickMetric(data, 'client_error_rate');
   const customOk = pickMetric(data, 'ok_rate');
+  const customCacheHit = pickMetric(data, 'cache_hit_rate');
+
+  const peakTarget = (() => {
+    try {
+      return Math.max(0, ...(STAGES || []).map((s) => Number(s?.target) || 0));
+    } catch {
+      return 0;
+    }
+  })();
 
   const textReport = [
     '=== Winsights Social k6 Stress Report ===',
     `Base URL: ${BASE_URL}`,
-    'Peak VUs target: 2000',
+    `Peak VUs target: ${peakTarget}`,
     '',
     breakingPointSummary(data),
     '',
@@ -1429,6 +1438,7 @@ export function handleSummary(data) {
     metricLine(customServer, 'server_error_rate (5xx/transport)'),
     metricLine(customClient, 'client_error_rate (4xx)'),
     metricLine(customOk, 'ok_rate (2xx/3xx)'),
+    metricLine(customCacheHit, 'cache_hit_rate (from X-Cache header)'),
     '',
     'Thresholds:',
     formatThresholds(data),
@@ -1488,7 +1498,7 @@ export function handleSummary(data) {
   <h1>Winsights Social – k6 Stress Report</h1>
   <div class="meta">
     <div><span class="k">Base URL:</span> ${escapeHtml(BASE_URL)}</div>
-    <div><span class="k">Peak VUs target:</span> 2000</div>
+    <div><span class="k">Peak VUs target:</span> ${escapeHtml(String(peakTarget))}</div>
     <div><span class="k">Breaking point:</span> ${escapeHtml(breakingPointSummary(data))}</div>
   </div>
 
