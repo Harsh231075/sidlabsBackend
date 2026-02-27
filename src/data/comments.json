@@ -1,0 +1,95 @@
+[
+  {
+    "id": "c1",
+    "postId": "p1",
+    "authorId": "u-mod",
+    "content": "Thanks for sharing this update—remember to avoid personal identifiers.",
+    "parentCommentId": null,
+    "createdAt": "2024-01-06T10:05:00.000Z",
+    "removed": false,
+    "moderation": {
+      "status": "ALLOW",
+      "reviewedBy": "u-admin",
+      "reviewedAt": "2025-12-27T18:18:08.997Z",
+      "action": "approved"
+    },
+    "visible": true
+  },
+  {
+    "id": "c2",
+    "postId": "p2",
+    "authorId": "u-patient-1",
+    "content": "I had a similar experience last month.",
+    "parentCommentId": null,
+    "createdAt": "2024-01-07T12:10:00.000Z",
+    "removed": false
+  },
+  {
+    "id": "c3",
+    "postId": "p2",
+    "authorId": "u-patient-2",
+    "content": "Appreciate this community. Following for updates.",
+    "parentCommentId": "c2",
+    "createdAt": "2024-01-07T12:25:00.000Z",
+    "removed": false
+  },
+  {
+    "id": "4ec5f7ff-b2b5-4314-aece-6770c89d31f5",
+    "postId": "158dc03c-51ab-4e85-b19c-fec43bb78bf2",
+    "authorId": "u-patient-1",
+    "content": "Sahi baat hai!",
+    "parentCommentId": null,
+    "createdAt": "2025-12-24T10:36:21.274Z",
+    "removed": false
+  },
+  {
+    "id": "d4d6440e-7aea-4ec0-a026-6587dbf6c025",
+    "postId": "9fd956e3-1a60-4379-bbe2-3d26dfba6a0b",
+    "authorId": "u-patient-1",
+    "content": "Stop spreading nonsense, you people are idiots.",
+    "parentCommentId": null,
+    "createdAt": "2025-12-27T17:45:27.587Z",
+    "removed": false,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0.6,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [
+        "toxicity"
+      ],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-27T17:45:27.587Z"
+    },
+    "visible": true
+  },
+  {
+    "id": "54086358-391a-4df9-bb9c-f0abd036bd88",
+    "postId": "9fd956e3-1a60-4379-bbe2-3d26dfba6a0b",
+    "authorId": "u-patient-1",
+    "content": "kjkl",
+    "parentCommentId": null,
+    "createdAt": "2025-12-27T17:55:13.102Z",
+    "removed": false,
+    "moderation": {
+      "status": "ALLOW",
+      "scores": {
+        "phi_score": 0,
+        "spam_score": 0,
+        "sales_pitch_score": 0,
+        "toxicity_score": 0,
+        "link_risk_score": 0,
+        "user_trust_score": 0.8999999999999999
+      },
+      "flags": [],
+      "detectedSpans": [],
+      "scannedAt": "2025-12-27T17:55:13.101Z"
+    },
+    "visible": true
+  }
+]

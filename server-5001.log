@@ -1,0 +1,10 @@
+[dotenv@17.2.3] injecting env (18) from server/.env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+API server listening on http://localhost:5001
+WebSocket server ready
+Auth provider: cognito
+Cognito configured: yes
+MongoDB Connected: localhost
+SMTP Server is ready to take messages
+cognitoLogin { email: 'sarah@winsights.life', hasPassword: true }
+cognitoLogin { email: 'admin@winsights.life', hasPassword: true }
+cognitoLogin { email: 'moderator@winsights.life', hasPassword: true }
