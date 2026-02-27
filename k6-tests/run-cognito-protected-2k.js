@@ -18,9 +18,11 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-function repoRootFromServerDir() {
-  // server/k6-tests -> server -> repo root
-  return path.resolve(__dirname, '..', '..');
+function findFirstExistingPath(candidates) {
+  for (const p of candidates) {
+    if (p && fs.existsSync(p)) return p;
+  }
+  return null;
 }
 
 function safeBasename(s) {
@@ -70,9 +72,24 @@ function assertCred(name, c) {
 }
 
 function main() {
-  const repoRoot = repoRootFromServerDir();
-  const defaultLoginPage = path.join(repoRoot, 'client', 'src', 'pages', 'LoginPage.tsx');
-  const loginPagePath = path.resolve(process.env.K6_FRONTEND_LOGIN_PAGE || defaultLoginPage);
+  // Support both layouts:
+  // 1) monorepo: <root>/server/k6-tests/run-cognito-protected-2k.js
+  // 2) backend-only: <backend>/k6-tests/run-cognito-protected-2k.js
+  const backendDir = path.resolve(__dirname, '..');
+  const repoRootCandidate = path.resolve(backendDir, '..');
+
+  const loginPagePath = (() => {
+    if (process.env.K6_FRONTEND_LOGIN_PAGE) return path.resolve(process.env.K6_FRONTEND_LOGIN_PAGE);
+
+    const candidates = [
+      // monorepo default
+      path.join(repoRootCandidate, 'client', 'src', 'pages', 'LoginPage.tsx'),
+      // sometimes people copy client into backendDir
+      path.join(backendDir, 'client', 'src', 'pages', 'LoginPage.tsx'),
+    ];
+
+    return findFirstExistingPath(candidates) || candidates[0];
+  })();
 
   const baseUrl = String(process.env.BASE_URL || 'http://localhost:5001').replace(/\/+$/, '');
   const profile = String(process.env.K6_PROFILE || 'quick').toLowerCase();
@@ -117,9 +134,22 @@ function main() {
   console.log(`[k6 runner] Using BASE_URL=${baseUrl}, K6_PROFILE=${profile}`);
   console.log(`[k6 runner] Using summary basename: ${summaryBase}`);
 
-  const k6Script = path.join(repoRoot, 'server', 'k6-tests', 'stress-all-apis-2k.js');
-  if (!fs.existsSync(k6Script)) {
-    throw new Error(`k6 script not found: ${k6Script}`);
+  const k6ScriptCandidates = [
+    // safest: script sitting next to this runner
+    path.join(__dirname, 'stress-all-apis-2k.js'),
+    // backend-only layout
+    path.join(backendDir, 'k6-tests', 'stress-all-apis-2k.js'),
+    // monorepo layout
+    path.join(repoRootCandidate, 'server', 'k6-tests', 'stress-all-apis-2k.js'),
+  ];
+
+  const k6Script = findFirstExistingPath(k6ScriptCandidates);
+  if (!k6Script) {
+    throw new Error(
+      `k6 script not found. Tried:\n` +
+      k6ScriptCandidates.map((p) => `- ${p}`).join('\n') +
+      `\n\nFix: ensure 'stress-all-apis-2k.js' exists under your k6-tests folder (same folder as this runner), or clone the full repo including server/.`
+    );
   }
 
   const env = {
