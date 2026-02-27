@@ -11,8 +11,7 @@ const http = require('http');
 const routes = require('./routes');
 const { initializeSocket, setIoInstance } = require('./socket');
 const connectDB = require('./db');
-const auditLogger = require('./middleware/auditLogger');
-const cookieParser = require("cookie-parser");
+const auditLogger = require('./middleware/auditLogger');  const responseCache = require('./middleware/responseCache');const cookieParser = require("cookie-parser");
 const redis = require('./services/redisClient');
 
 const PORT = process.env.PORT || 5001;
@@ -82,6 +81,9 @@ function startWorker() {
       memory: Math.round(process.memoryUsage().rss / 1024 / 1024) + 'MB',
     });
   });
+
+  // Response-level Redis cache for GET endpoints (short TTL, huge impact under concurrent load)
+  app.use('/api', responseCache());
 
   app.use('/api', AUDIT_LOGGER_ENABLED ? auditLogger() : (req, res, next) => next(), routes);
 
