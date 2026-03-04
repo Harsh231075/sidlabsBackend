@@ -1,0 +1,80 @@
+[
+  {
+    "badgeId": "first-post",
+    "name": "First Post",
+    "description": "Created your first post",
+    "criteria": {
+      "actionType": "create_post",
+      "threshold": 1
+    },
+    "imageUrl": "/badges/first-post.svg",
+    "tokenReward": 10,
+    "isNFT": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "badgeId": "community-contributor",
+    "name": "Community Contributor",
+    "description": "Created 10 posts",
+    "criteria": {
+      "actionType": "create_post",
+      "threshold": 10
+    },
+    "imageUrl": "/badges/community-contributor.svg",
+    "tokenReward": 50,
+    "isNFT": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "badgeId": "first-comment",
+    "name": "First Comment",
+    "description": "Left your first comment",
+    "criteria": {
+      "actionType": "create_comment",
+      "threshold": 1
+    },
+    "imageUrl": "/badges/first-comment.svg",
+    "tokenReward": 5,
+    "isNFT": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "badgeId": "active-member",
+    "name": "Active Member",
+    "description": "Left 20 comments",
+    "criteria": {
+      "actionType": "create_comment",
+      "threshold": 20
+    },
+    "imageUrl": "/badges/active-member.svg",
+    "tokenReward": 100,
+    "isNFT": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "badgeId": "forum-helper",
+    "name": "Community Helper",
+    "description": "Helped others with 10 forum replies",
+    "criteria": {
+      "actionType": "forum_reply",
+      "threshold": 10
+    },
+    "imageUrl": "/badges/forum-helper.svg",
+    "tokenReward": 75,
+    "isNFT": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "badgeId": "research-contributor",
+    "name": "Research Contributor",
+    "description": "Completed surveys to help research",
+    "criteria": {
+      "actionType": "survey_completion",
+      "threshold": 3
+    },
+    "imageUrl": "/badges/research-contributor.svg",
+    "tokenReward": 150,
+    "isNFT": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]

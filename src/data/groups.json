@@ -1,0 +1,53 @@
+[
+  {
+    "id": "g1",
+    "name": "Rare Disease Support",
+    "description": "Peer stories and resources for rare disease patients.",
+    "privacy": "public",
+    "ownerId": "u-patient-1",
+    "adminIds": [
+      "u-patient-1"
+    ],
+    "members": [
+      "u-patient-1",
+      "u-patient-2"
+    ],
+    "memberCount": 2,
+    "diseaseTag": "rare-disease",
+    "createdAt": "2024-01-05T09:00:00.000Z"
+  },
+  {
+    "id": "g2",
+    "name": "Caregivers United",
+    "description": "Care plans, encouragement, and caregiver connections.",
+    "privacy": "private",
+    "ownerId": "u-mod",
+    "adminIds": [
+      "u-mod"
+    ],
+    "members": [
+      "u-mod",
+      "u-patient-2",
+      "u-patient-1"
+    ],
+    "memberCount": 3,
+    "diseaseTag": "caregiver",
+    "createdAt": "2024-01-06T11:00:00.000Z"
+  },
+  {
+    "id": "g3",
+    "name": "Oncology Updates",
+    "description": "Updates and support for oncology patients and supporters.",
+    "privacy": "hidden",
+    "ownerId": "u-admin",
+    "adminIds": [
+      "u-admin"
+    ],
+    "members": [
+      "u-admin"
+    ],
+    "memberCount": 1,
+    "diseaseTag": "oncology",
+    "createdAt": "2024-01-07T08:30:00.000Z"
+  }
+]

@@ -1,0 +1,391 @@
+[
+  {
+    "userId": "u-patient-1",
+    "totalTokens": 205,
+    "tokenHistory": [
+      {
+        "id": "9d448e71-425b-4f2c-bc18-77c7c5d4a624",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-27T17:43:33.287Z",
+        "metadata": {
+          "postId": "9fd956e3-1a60-4379-bbe2-3d26dfba6a0b",
+          "groupId": null
+        }
+      },
+      {
+        "id": "d9fda0df-7faa-4304-abe9-230ffef8612e",
+        "action": "badge_earned",
+        "tokens": 10,
+        "timestamp": "2025-12-27T17:43:33.291Z",
+        "metadata": {
+          "badgeId": "first-post",
+          "badgeName": "First Post"
+        }
+      },
+      {
+        "id": "ed21e1ff-b9eb-4522-87d1-3e756b410ff9",
+        "action": "create_comment",
+        "tokens": 5,
+        "timestamp": "2025-12-27T17:45:27.593Z",
+        "metadata": {
+          "postId": "9fd956e3-1a60-4379-bbe2-3d26dfba6a0b",
+          "commentId": "d4d6440e-7aea-4ec0-a026-6587dbf6c025"
+        }
+      },
+      {
+        "id": "d4aa3b56-39a3-42ad-ab8f-2a5c3a64604a",
+        "action": "badge_earned",
+        "tokens": 5,
+        "timestamp": "2025-12-27T17:45:27.595Z",
+        "metadata": {
+          "badgeId": "first-comment",
+          "badgeName": "First Comment"
+        }
+      },
+      {
+        "id": "9b93d412-9b57-43e0-835c-48c6df292dcd",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-27T17:47:25.310Z",
+        "metadata": {
+          "postId": "d231a3aa-bc81-428e-90c3-c19e9fdef60c",
+          "groupId": null
+        }
+      },
+      {
+        "id": "dfdd6907-b812-4726-a83b-0b362372c3cc",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-27T17:47:48.520Z",
+        "metadata": {
+          "postId": "4b3f2ce0-e0fb-406a-bb76-ca063e78357a",
+          "groupId": null
+        }
+      },
+      {
+        "id": "3a3b5bdb-975c-4068-83d6-123a43ac3fb6",
+        "action": "create_comment",
+        "tokens": 5,
+        "timestamp": "2025-12-27T17:55:13.105Z",
+        "metadata": {
+          "postId": "9fd956e3-1a60-4379-bbe2-3d26dfba6a0b",
+          "commentId": "54086358-391a-4df9-bb9c-f0abd036bd88"
+        }
+      },
+      {
+        "id": "45379b55-fc79-426c-9f6c-c0900a055a52",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-27T18:07:36.098Z",
+        "metadata": {
+          "postId": "d9f63623-97af-429e-8e49-4506139ea75c",
+          "groupId": null
+        }
+      },
+      {
+        "id": "63ef962f-7a34-4078-831f-4f6ea7c2f5bf",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-27T18:07:58.430Z",
+        "metadata": {
+          "postId": "4f2dd1d6-a712-4937-8692-c9d684934ffb",
+          "groupId": null
+        }
+      },
+      {
+        "id": "205ac383-6661-4b1d-9b3e-5ac8f13123ba",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-27T18:15:44.415Z",
+        "metadata": {
+          "postId": "021e43d8-65c4-43be-ae54-fdc363ae0033",
+          "groupId": null
+        }
+      },
+      {
+        "id": "7c8734c4-c521-476e-b54c-cfa2199faf7b",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:06:50.814Z",
+        "metadata": {
+          "postId": "0fbe6af9-0c2c-405c-965a-63f35378e7e2",
+          "groupId": null
+        }
+      },
+      {
+        "id": "639e33a4-cb96-4a2f-bf6b-492c520f83dd",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:07:47.712Z",
+        "metadata": {
+          "postId": "dab1a026-c55f-42bd-a853-e51f61b0f81b",
+          "groupId": null
+        }
+      },
+      {
+        "id": "d0729ed8-9873-4fda-9583-269ad8e26e34",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2026-01-09T11:48:57.688Z",
+        "metadata": {
+          "postId": "b1d589b2-e259-4c74-9f25-448c61c23fb3",
+          "groupId": null
+        }
+      },
+      {
+        "id": "5f8a8ee1-6440-4849-b324-43c07a597673",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2026-01-09T11:59:03.147Z",
+        "metadata": {
+          "postId": "c104dcdc-c9a3-40aa-a482-6d49c2594b5f",
+          "groupId": null
+        }
+      },
+      {
+        "id": "a36fd2dc-e405-424f-b62c-1b777ba686a2",
+        "action": "badge_earned",
+        "tokens": 50,
+        "timestamp": "2026-01-09T11:59:03.148Z",
+        "metadata": {
+          "badgeId": "community-contributor",
+          "badgeName": "Community Contributor"
+        }
+      },
+      {
+        "id": "ce24874c-5505-434d-be27-1c0e2cc6f31c",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2026-01-09T13:01:39.698Z",
+        "metadata": {
+          "postId": "002fdaf4-39a7-4d81-b61b-95ad90ad3f5c",
+          "groupId": null
+        }
+      },
+      {
+        "id": "c30167d5-bd23-4f02-bf2a-3197b6bd505c",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2026-01-09T13:01:55.538Z",
+        "metadata": {
+          "postId": "0f356daf-95a3-4405-b8b9-574452d900ca",
+          "groupId": null
+        }
+      },
+      {
+        "id": "da61866e-23f2-4927-862f-64f6fb5e92b1",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2026-01-09T13:05:11.008Z",
+        "metadata": {
+          "postId": "ec28233e-5938-4292-808b-68733cc4ea29",
+          "groupId": null
+        }
+      }
+    ],
+    "badges": [
+      {
+        "badgeId": "first-post",
+        "minted": true,
+        "mintedAt": "2025-12-27T17:43:33.291Z",
+        "nftTokenId": null,
+        "nftContractAddress": null
+      },
+      {
+        "badgeId": "first-comment",
+        "minted": true,
+        "mintedAt": "2025-12-27T17:45:27.595Z",
+        "nftTokenId": null,
+        "nftContractAddress": null
+      },
+      {
+        "badgeId": "community-contributor",
+        "minted": true,
+        "mintedAt": "2026-01-09T11:59:03.148Z",
+        "nftTokenId": null,
+        "nftContractAddress": null
+      }
+    ],
+    "actionCounts": {
+      "create_post": 13,
+      "create_comment": 2,
+      "forum_reply": 0,
+      "survey_completion": 0,
+      "helpful_content": 0
+    },
+    "createdAt": "2025-12-27T17:43:33.287Z",
+    "updatedAt": "2026-01-09T13:05:11.008Z"
+  },
+  {
+    "userId": "u-mod",
+    "totalTokens": 180,
+    "tokenHistory": [
+      {
+        "id": "76e471ad-b13f-48f7-aeb9-b8873bac55ac",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-27T18:18:49.390Z",
+        "metadata": {
+          "postId": "ea3e67c9-3a1c-4e59-8039-d1708d8e3a45",
+          "groupId": null
+        }
+      },
+      {
+        "id": "edb03151-1329-4560-b097-c8fe77553fa5",
+        "action": "badge_earned",
+        "tokens": 10,
+        "timestamp": "2025-12-27T18:18:49.392Z",
+        "metadata": {
+          "badgeId": "first-post",
+          "badgeName": "First Post"
+        }
+      },
+      {
+        "id": "af36fa23-ba44-4ae5-8b3b-c1f5fa078c3f",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:12:05.806Z",
+        "metadata": {
+          "postId": "ad95aefa-caeb-49da-96f2-ad04e424e521",
+          "groupId": null
+        }
+      },
+      {
+        "id": "d7345191-77bc-4e04-99ff-6a0b30f44b1f",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:12:23.594Z",
+        "metadata": {
+          "postId": "337fc4aa-9bf5-4822-9bd9-820a00aeec1d",
+          "groupId": null
+        }
+      },
+      {
+        "id": "b8b29866-61bc-4232-bd3c-0553864e888c",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:12:37.721Z",
+        "metadata": {
+          "postId": "345d0856-21ce-4e04-bd7f-5010c8b9ec46",
+          "groupId": null
+        }
+      },
+      {
+        "id": "41119518-7dde-43de-8093-346401d59505",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:12:47.697Z",
+        "metadata": {
+          "postId": "300b8d65-8702-45ff-bcd7-ecad22d35e76",
+          "groupId": null
+        }
+      },
+      {
+        "id": "1a99fac2-8e03-46e0-b86c-0dda9c9a528c",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:13:24.528Z",
+        "metadata": {
+          "postId": "e3c61194-0e6f-4168-b9ae-9e8c85ad8c19",
+          "groupId": null
+        }
+      },
+      {
+        "id": "6bc33d56-1f39-43c3-9555-6938821ad8c7",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:14:14.331Z",
+        "metadata": {
+          "postId": "ec1135ce-2f9c-4c66-b4f0-c39b591b61c3",
+          "groupId": null
+        }
+      },
+      {
+        "id": "df4b2a34-1949-4eef-9229-713d3d4a71e7",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:14:55.518Z",
+        "metadata": {
+          "postId": "f2515889-de25-4878-83c8-b55abff08a57",
+          "groupId": null
+        }
+      },
+      {
+        "id": "c6c7bd26-7ff0-4fe9-b68b-9b8e71ac8654",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:19:05.530Z",
+        "metadata": {
+          "postId": "b6b05c81-5211-4dfd-b16e-18095235c39d",
+          "groupId": null
+        }
+      },
+      {
+        "id": "9d957ae6-a56f-46c2-9fc4-1011b70143df",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:19:23.869Z",
+        "metadata": {
+          "postId": "14412fff-5db8-4a30-bd05-3f05530258d6",
+          "groupId": null
+        }
+      },
+      {
+        "id": "38285536-5764-468f-ad9f-8f108213dd39",
+        "action": "badge_earned",
+        "tokens": 50,
+        "timestamp": "2025-12-29T06:19:23.871Z",
+        "metadata": {
+          "badgeId": "community-contributor",
+          "badgeName": "Community Contributor"
+        }
+      },
+      {
+        "id": "9da44fc8-c2f5-4c16-924f-8d145c7b6741",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2025-12-29T06:19:34.662Z",
+        "metadata": {
+          "postId": "fc02f0cd-0501-4a0b-8dba-fdc55905649b",
+          "groupId": null
+        }
+      },
+      {
+        "id": "dc81f7f8-930d-434a-a187-17fa1a7b8fbd",
+        "action": "create_post",
+        "tokens": 10,
+        "timestamp": "2026-01-09T12:06:12.539Z",
+        "metadata": {
+          "postId": "706f62b6-de4e-4dfb-9257-39a9db02a05b",
+          "groupId": null
+        }
+      }
+    ],
+    "badges": [
+      {
+        "badgeId": "first-post",
+        "minted": true,
+        "mintedAt": "2025-12-27T18:18:49.392Z",
+        "nftTokenId": null,
+        "nftContractAddress": null
+      },
+      {
+        "badgeId": "community-contributor",
+        "minted": true,
+        "mintedAt": "2025-12-29T06:19:23.871Z",
+        "nftTokenId": null,
+        "nftContractAddress": null
+      }
+    ],
+    "actionCounts": {
+      "create_post": 12,
+      "create_comment": 0,
+      "forum_reply": 0,
+      "survey_completion": 0,
+      "helpful_content": 0
+    },
+    "createdAt": "2025-12-27T18:18:49.390Z",
+    "updatedAt": "2026-01-09T12:06:12.539Z"
+  }
+]
